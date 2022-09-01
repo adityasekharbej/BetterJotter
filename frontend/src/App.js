@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import { Menu } from './components/Menu/menu';
-import { MainRoutes } from './components/MainRoutes';
+
+import { MainRoutes } from './Routes/MainRoutes';
 
 function App() {
   return (

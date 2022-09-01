@@ -21,13 +21,13 @@ export const Menu = () => {
     </div>
     <nav class="nav" id="nav">
       <ul>
-        <li><Link to="#">Home</Link></li>
+        <li><Link to="/" onClick={()=>menuOnClick()}>Home</Link></li>
         <li><Link to="#"></Link></li>
-        <li><Link to="#">Text Editor</Link></li>
+        <li><Link to="#" onClick={()=>menuOnClick()}>Text Editor</Link></li>
 
-        <li><Link to="#">Task Manager</Link></li>
+        <li><Link to="#" onClick={()=>menuOnClick()}>Task Manager</Link></li>
 
-        <li><Link to="/p">Password Manager</Link></li>
+        <li><Link to="/p" onClick={()=>menuOnClick()}>Password Manager</Link></li>
 
         <li><Link to="#"></Link></li>
         <li><Link to="#"></Link></li>
