@@ -1,25 +1,21 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
-  "icons": [
-    {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
-    },
-    {
-      "src": "logo192.png",
-      "type": "image/png",
-      "sizes": "192x192"
-    },
-    {
-      "src": "logo512.png",
-      "type": "image/png",
-      "sizes": "512x512"
+  "name": "My Extension",
+  "description": "open your best companion with one click",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "action":{
+    "default_title": "My Extension",
+    "default_popup": "index.html",
+    "default_icon": {
+      "16": "favicon16.ico",
+      "128": "favicon128.ico"
     }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  },
+  "permissions": [ "identity" ],
+  "oauth2": {
+    "client_id": "571445304194-jghdkopa9gu2r76c71ctss9dkscg4217.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email"
+    ]
+  }
 }
