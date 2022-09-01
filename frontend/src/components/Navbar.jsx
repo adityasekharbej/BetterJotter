@@ -1,19 +1,30 @@
 import React from "react";
-import styled from 'styled-components'
+import { Link } from "react-router-dom";
+import { UserAuth } from "../context/AuthContext";
+import styled from "styled-components";
 
-
-const Wrapper  = styled.div`
-
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-`
+const Wrapper = styled.div`
+  text-align: center;
+`;
 
 export const Navbar = () => {
+  const { user, logOut } = UserAuth();
+
+  const handleSignOut = async () => {
+    try {
+      await logOut();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <Wrapper>
-      <p>Navbar </p>
-      <p>Sign In</p>
+      {user?.displayName ? (
+        <button onClick={handleSignOut}>Logout</button>
+      ) : (
+        <Link to="/signin">Sign in</Link>
+      )}
     </Wrapper>
   );
 };
