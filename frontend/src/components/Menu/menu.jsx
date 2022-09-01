@@ -27,7 +27,7 @@ export const Menu = () => {
 
         <li><Link to="#" onClick={()=>menuOnClick()}>Task Manager</Link></li>
 
-        <li><Link to="/p" onClick={()=>menuOnClick()}>Password Manager</Link></li>
+        <li><Link to="/p" onClick={()=>menuOnClick()}>Password Generator</Link></li>
 
         <li><Link to="#"></Link></li>
         <li><Link to="#"></Link></li>
