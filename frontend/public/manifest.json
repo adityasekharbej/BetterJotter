@@ -10,12 +10,5 @@
       "16": "favicon16.ico",
       "128": "favicon128.ico"
     }
-  },
-  "permissions": [ "identity" ],
-  "oauth2": {
-    "client_id": "571445304194-jghdkopa9gu2r76c71ctss9dkscg4217.apps.googleusercontent.com",
-    "scopes": [
-      "https://www.googleapis.com/auth/userinfo.email"
-    ]
   }
 }
