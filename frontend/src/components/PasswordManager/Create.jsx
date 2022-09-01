@@ -34,7 +34,9 @@ useEffect(()=>{
     ) {
       notify("Please select atleast one checkbox", true);
     }
- else if(passwordLength > 0)
+ else if(passwordLength > 0){
+  notify("Please select length", true);
+ }
     
     
     else {
