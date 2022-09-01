@@ -1,49 +1,55 @@
-
-import React from 'react'
-import { Route, Routes } from 'react-router-dom'
-import { Home } from '../pages/Home'
-import { Menu } from '../components/Menu/menu'
-
-import { Create } from '../components/PasswordManager/Create'
-
-export const MainRoutes = () => {
-  return (
-    <Routes>
-        <Route path="/" element={<><Menu/><Home/></>}/>
-        <Route path="/create" element={<><Menu/><Create/></>}/>
-    </Routes>
-  )
-}
-
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Home } from "../pages/Home";
 import { Menu } from "../components/Menu/menu";
-import { Pablo } from "../components/PasswordManager/Pablo";
-import { Navbar } from "../components/Navbar";
-import { Account } from "../pages/Account";
-import { Signin } from "../pages/Signin";
-import { Protected } from "../components/Protected";
-
+import { Create } from "../components/PasswordManager/Create";
+import Login from "../components/signup/Login";
+import Signup from "../components/signup/Signup";
+import Home from "./../components/Homepage/Home";
 export const MainRoutes = () => {
   return (
-    <>
-      <Menu />
-      <Navbar />
+    <div>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/p" element={<Pablo />} />
         <Route
-          path="/account"
+          path="/"
           element={
-            <Protected>
-              <Account />
-            </Protected>
+            <>
+              {" "}
+              <Menu />
+              <Home />
+            </>
           }
         />
-        <Route path="/signin" element={<Signin />} />
+        <Route
+          path="/passwordmanager"
+          element={
+            <>
+              {" "}
+              <Menu />
+              <Create />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              {" "}
+              <Menu />
+              <Login />
+            </>
+          }
+        />
+        <Route
+          path="/signup"
+          element={
+            <>
+              {" "}
+              <Menu />
+              <Signup />
+            </>
+          }
+        />
       </Routes>
-    </>
+    </div>
   );
 };
-
