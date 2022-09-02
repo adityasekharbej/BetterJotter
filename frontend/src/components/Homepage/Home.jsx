@@ -9,9 +9,9 @@ import {
   Button,
   Flex,
   useToast,
-  Spacer,
-  Center
+  leftIcon
 } from "@chakra-ui/react";
+import { EmailIcon} from '@chakra-ui/icons'
 const Home = () => {
   const [resize, setResize] = useState("horizontal");
   const [text, setText] = useState("");
@@ -152,7 +152,7 @@ const Home = () => {
             label="This will change your text to uppercase"
             bg="yellow.300"
           >
-            <Button colorScheme="purple" onClick={handleUpper}>
+            <Button colorScheme="purple" onClick={handleUpper} leftIcon={<EmailIcon />}  variant='solid'>
               Upper
             </Button>
           </Tooltip>
