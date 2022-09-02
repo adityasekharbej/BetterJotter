@@ -75,11 +75,11 @@ const Task = () => {
       <Box  w="70%" m="auto"pt="30px">
         {data.map((el) => (
          <Flex align={"center"}>
-           <Flex key={el.id}  
+           <Flex key={el._id}  
           background="linear-gradient(180deg, #180527, #17052a, #16042d, #150430, #130433, #110436, #0d0439, #08043c)"
           borderRadius="10px" color="white" m="10px" boxShadow="rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px" p="20px">
             <Box>
-              <p >{el.task}</p>
+              <p >{el.content}</p>
             </Box>
             <Flex justify="flex-end" gap={30}>
            
