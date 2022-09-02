@@ -9,13 +9,13 @@ import Home from "./../components/Homepage/Home";
 export const MainRoutes = ({ setIsLogin, isLogin }) => {
   return (
     <div>
-      <Menu setIsLogin={ setIsLogin } isLogin= {isLogin}/>
       <Routes>
         <Route
           path="/"
           element={
             <>
               {" "}
+              <Menu />
               <Home setIsLogin={ setIsLogin } isLogin= {isLogin}/>
             </>
           }
@@ -25,6 +25,7 @@ export const MainRoutes = ({ setIsLogin, isLogin }) => {
           element={
             <>
               {" "}
+              <Menu />
               <Create />
             </>
           }
@@ -34,6 +35,7 @@ export const MainRoutes = ({ setIsLogin, isLogin }) => {
           element={
             <>
               {" "}
+              <Menu />
               <Login setIsLogin={ setIsLogin } isLogin= {isLogin}/>
             </>
           }
@@ -43,6 +45,7 @@ export const MainRoutes = ({ setIsLogin, isLogin }) => {
           element={
             <>
               {" "}
+              <Menu />
               <Signup />
             </>
           }
@@ -52,6 +55,7 @@ export const MainRoutes = ({ setIsLogin, isLogin }) => {
           element={
             <>
               {" "}
+              <Menu />
               <Task/>
             </>
           }

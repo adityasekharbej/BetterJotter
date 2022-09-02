@@ -126,7 +126,7 @@ ul{
   } 
   body{
     display: flex;
-    height: 70vh;
+    height: 80vh;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -134,11 +134,12 @@ ul{
   }
     
 .btn-shine{
-
-
+position: absolute;
+top:50%;
+left:20%;
 transform: translate(-50%,-50%);
-margin:auto;
-/* color: #ffffff; */
+
+color: #ffffff;
 background: linear-gradient(to right, #4d4d4d 0, white 10%, #4d4d4d 20%);
 background-position: 0;
 -webkit-background-clip: text;
