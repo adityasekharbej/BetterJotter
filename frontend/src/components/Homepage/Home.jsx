@@ -11,6 +11,7 @@ import {
   useToast,
   leftIcon,
   Text,
+  Center,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { EmailIcon } from "@chakra-ui/icons";
@@ -22,12 +23,12 @@ const Home = ({ setIsLogin, isLogin }) => {
   const toast = useToast();
 
   useEffect(() => {
-    console.log("hiii",isLogin)
-    if(!isLogin){
-      navigate('/login')
+    const token = localStorage.getItem("tokenStore");
+    console.log("hiii", isLogin);
+    if (!token) {
+      navigate("/login");
     }
-  }, [])
-  
+  }, []);
 
   const createNote = async () => {
     try {
@@ -37,25 +38,25 @@ const Home = ({ setIsLogin, isLogin }) => {
           content: text,
         };
 
-        await axios.post("http://localhost:8080/api/tasks", newNote, {
+        await axios.post("https://lit-basin-77633.herokuapp.com/api/tasks", newNote, {
           headers: { Authorization: token },
         });
       }
       setText("");
       toast({
-        position: "top",
+        position: "top-right",
         duration: 1000,
         isClosable: true,
         status: "success",
         render: () => (
           <Box color="white" p={3} bg="green.500">
-            Task added successfully 
+            Task added successfully
           </Box>
         ),
       });
     } catch (err) {
       // window.location.href = "/";
-      console.log("error happened")
+      console.log("error happened");
     }
   };
 
@@ -63,7 +64,7 @@ const Home = ({ setIsLogin, isLogin }) => {
     let newText = text.toUpperCase();
     setText(newText);
     toast({
-      position: "top",
+      position: "top-right",
       duration: 1000,
       isClosable: true,
       status: "success",
@@ -78,7 +79,7 @@ const Home = ({ setIsLogin, isLogin }) => {
   const handleDefault = () => {
     setText("");
     toast({
-      position: "top",
+      position: "top-right",
       duration: 1000,
       isClosable: true,
       status: "success",
@@ -94,7 +95,7 @@ const Home = ({ setIsLogin, isLogin }) => {
     let newText2 = text.toLowerCase();
     setText(newText2);
     toast({
-      position: "top",
+      position: "top-right",
       duration: 1000,
       isClosable: true,
       status: "success",
@@ -120,7 +121,7 @@ const Home = ({ setIsLogin, isLogin }) => {
   const changeColor = (number) => {
     document.getElementById("myBox").style.color = color[number];
     toast({
-      position: "top",
+      position: "top-right",
       duration: 1000,
       isClosable: true,
       status: "success",
@@ -143,7 +144,7 @@ const Home = ({ setIsLogin, isLogin }) => {
     text.select();
     navigator.clipboard.writeText(text.value);
     toast({
-      position: "top",
+      position: "top-right",
       duration: 1000,
       isClosable: true,
       status: "success",
@@ -159,7 +160,7 @@ const Home = ({ setIsLogin, isLogin }) => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
     toast({
-      position: "top",
+      position: "top-right",
       duration: 1000,
       isClosable: true,
       status: "success",
@@ -180,9 +181,11 @@ const Home = ({ setIsLogin, isLogin }) => {
 
   return (
     <Box>
-      <Text align="center" onClick={logoutSubmit}>
-        Logout
-      </Text>
+      <Flex justify="flex-end" pt="25px" pr="30px">
+        <Button align="right" colorScheme="red" onClick={logoutSubmit}>
+          Logout
+        </Button>
+      </Flex>
       <Box m="0 auto">
         <Flex justify="center">
           <RadioGroup defaultValue={resize} onChange={setResize} mb={6} mt={6}>
@@ -202,12 +205,7 @@ const Home = ({ setIsLogin, isLogin }) => {
             label="This will change your text to uppercase"
             bg="yellow.300"
           >
-            <Button
-              colorScheme="purple"
-              onClick={handleUpper}
-              leftIcon={<EmailIcon />}
-              variant="solid"
-            >
+            <Button colorScheme="purple" onClick={handleUpper} variant="solid">
               Upper
             </Button>
           </Tooltip>
@@ -270,15 +268,18 @@ const Home = ({ setIsLogin, isLogin }) => {
           </Button>
         </Flex>
 
-        <Textarea
-          placeholder="Enter your text here"
-          size="sm"
-          id="myBox"
-          resize={resize}
-          value={text}
-          mt="30px"
-          onChange={(e) => setText(e.target.value)}
-        />
+        <Center>
+          <Textarea
+            placeholder="Enter your text here"
+            size="sm"
+            id="myBox"
+            resize={resize}
+            value={text}
+            mt="30px"
+            w="45%"
+            onChange={(e) => setText(e.target.value)}
+          />
+        </Center>
         <Flex justify="center" mt="10px">
           <Button colorScheme="purple" onClick={createNote}>
             Add
