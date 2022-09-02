@@ -36,7 +36,7 @@ export default function Login({ setIsLogin, isLogin }) {
 
   const loginSubmit = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/users/login", {
+      const res = await axios.post("https://lit-basin-77633.herokuapp.com/users/login", {
         email: user.email,
         password: user.password,
       });
