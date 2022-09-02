@@ -54,7 +54,7 @@ export const Menu = () => {
             </li>
 
             <li>
-              <Link to="#"></Link>
+              <Link to="/tasks" onClick={() => menuOnClick()}>Tasks</Link>
             </li>
             <li>
               <Link to="#"></Link>
