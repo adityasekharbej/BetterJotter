@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Box,
   RadioGroup,
@@ -9,14 +9,55 @@ import {
   Button,
   Flex,
   useToast,
-  leftIcon
+  leftIcon,
+  Text,
 } from "@chakra-ui/react";
-import { EmailIcon} from '@chakra-ui/icons'
-const Home = () => {
+import axios from "axios";
+import { EmailIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
+const Home = ({ setIsLogin, isLogin }) => {
   const [resize, setResize] = useState("horizontal");
   const [text, setText] = useState("");
 
   const toast = useToast();
+
+  useEffect(() => {
+    console.log("hiii",isLogin)
+    if(!isLogin){
+      navigate('/login')
+    }
+  }, [])
+  
+
+  const createNote = async () => {
+    try {
+      const token = localStorage.getItem("tokenStore");
+      if (token) {
+        const newNote = {
+          content: text,
+        };
+
+        await axios.post("http://localhost:8080/api/tasks", newNote, {
+          headers: { Authorization: token },
+        });
+      }
+      setText("");
+      toast({
+        position: "top",
+        duration: 1000,
+        isClosable: true,
+        status: "success",
+        render: () => (
+          <Box color="white" p={3} bg="green.500">
+            Task added successfully 
+          </Box>
+        ),
+      });
+    } catch (err) {
+      // window.location.href = "/";
+      console.log("error happened")
+    }
+  };
 
   const handleUpper = () => {
     let newText = text.toUpperCase();
@@ -130,12 +171,21 @@ const Home = () => {
     });
     // props.showAlert("Hiiiii","success")
   };
+  const navigate = useNavigate();
+  const logoutSubmit = () => {
+    localStorage.clear();
+    setIsLogin(false);
+    navigate("/login");
+  };
 
   return (
     <Box>
-      <Box m="30px auto 0 auto">
+      <Text align="center" onClick={logoutSubmit}>
+        Logout
+      </Text>
+      <Box m="0 auto">
         <Flex justify="center">
-          <RadioGroup defaultValue={resize} onChange={setResize} mb={6}>
+          <RadioGroup defaultValue={resize} onChange={setResize} mb={6} mt={6}>
             <Stack direction="row" spacing={5}>
               <Radio value="horizontal">
                 <Button colorScheme="green">Horizontal</Button>
@@ -152,7 +202,12 @@ const Home = () => {
             label="This will change your text to uppercase"
             bg="yellow.300"
           >
-            <Button colorScheme="purple" onClick={handleUpper} leftIcon={<EmailIcon />}  variant='solid'>
+            <Button
+              colorScheme="purple"
+              onClick={handleUpper}
+              leftIcon={<EmailIcon />}
+              variant="solid"
+            >
               Upper
             </Button>
           </Tooltip>
@@ -224,6 +279,11 @@ const Home = () => {
           mt="30px"
           onChange={(e) => setText(e.target.value)}
         />
+        <Flex justify="center" mt="10px">
+          <Button colorScheme="purple" onClick={createNote}>
+            Add
+          </Button>
+        </Flex>
       </Box>
     </Box>
   );
