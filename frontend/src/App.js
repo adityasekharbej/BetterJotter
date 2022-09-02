@@ -9,7 +9,7 @@ function App() {
   return (
     <div>
       <MainRoutes />
-      {/* <Task/> */}
+      <Task/>
       <About/>
       {/* <Home/> */}
     </div>
