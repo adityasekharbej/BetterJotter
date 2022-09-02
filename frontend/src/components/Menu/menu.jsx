@@ -40,8 +40,8 @@ export const Menu = () => {
                 Text Editor
               </Link>
             </li> */}
-            {/* 
-            <li>
+            
+            {/* <li>
               <Link to="#" onClick={() => menuOnClick()}>
                 Task Manager
               </Link>
