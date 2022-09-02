@@ -49,6 +49,7 @@ export default function Signup() {
   };
   return (
     <Flex
+    minW={"800px"}
       minH={"100vh"}
       align={"center"}
       justify={"center"}

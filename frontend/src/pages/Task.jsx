@@ -17,32 +17,7 @@ import { Link as Link } from "react-router-dom";
 import { Icon } from "@chakra-ui/react";
 import { MdOutlineRecordVoiceOver } from "react-icons/md";
 const Task = () => {
-  // let dataa = [
-  //   {
-  //     id: "1",
-  //     task: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  //   },
-  //   {
-  //     id: "",
-  //     task: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  //   },
-  //   {
-  //     id: "3",
-  //     task: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  //   },
-  //   {
-  //     id: "4",
-  //     task: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  //   },
-  //   {
-  //     id: "5",
-  //     task: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  //   },
-  //   {
-  //     id: "6",
-  //     task: "Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book",
-  //   },
-  // ];
+  
   const [data, setData] = useState([]);
   const [token, setToken] = useState("");
   const toast = useToast();
@@ -110,10 +85,10 @@ const Task = () => {
   };
 
   return (
-    <Box>
+    <Box minW={"800px"} minH={"600px"}>
       <Box w="70%" m="auto" pt="50px">
         <Center>
-          <Link to="/">
+          <Link to="/create">
             <Text border="3.5px solid teal" p="5px" borderRadius="10px" fontWeight={"600"} bg="#e6fffa">
               Create Task✍️
             </Text>

@@ -113,7 +113,7 @@ export const Create = () => {
     }
   };
   return (
-    <Box w="100%" m="auto" p="auto">
+    <Box minW={"800px"} m="auto" pb="100px">
       <Box w="60%" m="auto">
         <Center>
           {" "}

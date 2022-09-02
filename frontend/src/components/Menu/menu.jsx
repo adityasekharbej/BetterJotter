@@ -40,11 +40,11 @@ export const Menu = ({ setIsLogin, isLogin }) => {
                 Password Generator
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/login" onClick={() => menuOnClick()}>
                 Login
               </Link>
-            </li>
+            </li> */}
             {/* <li>
               <Link to="#" onClick={() => menuOnClick()}>
                 Text Editor
@@ -64,7 +64,7 @@ export const Menu = ({ setIsLogin, isLogin }) => {
               <Link to="#"></Link>
             </li>
             <li>
-              <Link to="#">About</Link>
+              <Link to="/about" onClick={() => menuOnClick()}>About</Link>
             </li>
           </ul>
         </nav>

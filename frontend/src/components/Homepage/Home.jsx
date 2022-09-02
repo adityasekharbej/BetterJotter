@@ -16,15 +16,17 @@ import {
 import axios from "axios";
 import { EmailIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router-dom";
+
 const Home = ({ setIsLogin, isLogin }) => {
   const [resize, setResize] = useState("horizontal");
   const [text, setText] = useState("");
+  const [istoken, setToken] = useState("");
+  const navigate = useNavigate();
 
   const toast = useToast();
 
   useEffect(() => {
     const token = localStorage.getItem("tokenStore");
-    console.log("hiii", isLogin);
     if (!token) {
       navigate("/login");
     }
@@ -38,9 +40,13 @@ const Home = ({ setIsLogin, isLogin }) => {
           content: text,
         };
 
-        await axios.post("https://lit-basin-77633.herokuapp.com/api/tasks", newNote, {
-          headers: { Authorization: token },
-        });
+        await axios.post(
+          "https://lit-basin-77633.herokuapp.com/api/tasks",
+          newNote,
+          {
+            headers: { Authorization: token },
+          }
+        );
       }
       setText("");
       toast({
@@ -172,7 +178,8 @@ const Home = ({ setIsLogin, isLogin }) => {
     });
     // props.showAlert("Hiiiii","success")
   };
-  const navigate = useNavigate();
+  
+
   const logoutSubmit = () => {
     localStorage.clear();
     setIsLogin(false);
@@ -180,7 +187,7 @@ const Home = ({ setIsLogin, isLogin }) => {
   };
 
   return (
-    <Box>
+    <Box minW={"800px"} pb="100px">
       <Flex justify="flex-end" pt="25px" pr="30px">
         <Button align="right" colorScheme="red" onClick={logoutSubmit}>
           Logout

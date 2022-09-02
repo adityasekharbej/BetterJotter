@@ -33,14 +33,7 @@ const About = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
-      <Box>
-      
-          <Center>
-            <Heading className="btn-shine">Made with LOVE ❤️</Heading>
-         
-
-
-          </Center>
+      <Box className="body" minW={"800px"} minH={"600px"}>
           <Accordion allowMultiple>
             <AccordionItem>
               <h2>
@@ -66,13 +59,13 @@ const About = () => {
               >
                 <Center>
                   {" "}
-                  <ul>
+                  <ul className="ul">
                     <li>
                       <a
                         target="open"
                         href="https://www.facebook.com/aditya.sekhar.bej/"
                       >
-                        <i class="fab fa-facebook-f"></i>
+                        <i class="fa-brands fa-facebook"></i>
                       </a>
                     </li>
 
@@ -130,7 +123,7 @@ const About = () => {
               >
                 <Center>
                   {" "}
-                  <ul>
+                  <ul className="ul">
                     <li>
                       <a
                         target="open"
@@ -190,7 +183,7 @@ const About = () => {
               >
                 <Center>
                   {" "}
-                  <ul>
+                  <ul className="ul">
                     <li>
                       <a
                         href="https://www.facebook.com/susmita.mandal.50746"
@@ -217,6 +210,10 @@ const About = () => {
               </AccordionPanel>
             </AccordionItem>
           </Accordion>
+
+          <Center>
+            <Heading className="btn-shine">Made with LOVE ❤️</Heading>
+          </Center>
       
       </Box>
     </>

@@ -1,14 +1,14 @@
 {
-  "name": "My Extension",
+  "name": "SAS",
   "description": "open your best companion with one click",
   "version": "1.0.0",
   "manifest_version": 3,
-  "action":{
-    "default_title": "My Extension",
+  "action": {
+    "default_title": "SAS",
     "default_popup": "index.html",
     "default_icon": {
-      "16": "favicon16.ico",
-      "128": "favicon128.ico"
+      "16": "logo192.png",
+      "128": "logo192.png"
     }
   }
 }

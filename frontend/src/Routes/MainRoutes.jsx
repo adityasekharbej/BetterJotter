@@ -4,7 +4,9 @@ import { Menu } from "../components/Menu/menu";
 import { Create } from "../components/PasswordManager/Create";
 import Login from "../components/signup/Login";
 import Signup from "../components/signup/Signup";
+import About from "../pages/About";
 import Task from "../pages/Task";
+import { Welcome } from "../pages/Welcome";
 import Home from "./../components/Homepage/Home";
 export const MainRoutes = ({ setIsLogin, isLogin }) => {
   return (
@@ -12,6 +14,17 @@ export const MainRoutes = ({ setIsLogin, isLogin }) => {
       <Routes>
         <Route
           path="/"
+          element={
+            <>
+              {" "}
+              <Menu />
+              <Welcome/>
+              {/* <Home setIsLogin={ setIsLogin } isLogin= {isLogin}/> */}
+            </>
+          }
+        />
+          <Route
+          path="/create"
           element={
             <>
               {" "}
@@ -57,6 +70,16 @@ export const MainRoutes = ({ setIsLogin, isLogin }) => {
               {" "}
               <Menu />
               <Task/>
+            </>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <>
+              {" "}
+              <Menu />
+              <About/>
             </>
           }
         />

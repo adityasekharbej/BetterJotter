@@ -24,7 +24,7 @@ export default function Login({ setIsLogin, isLogin }) {
   useEffect(() => {
     console.log("hiii",isLogin)
     if(isLogin){
-      navigate('/')
+      navigate('/create')
     }
   },[])
 
@@ -43,13 +43,14 @@ export default function Login({ setIsLogin, isLogin }) {
       setUser({ name: "", email: "", password: "" });
       localStorage.setItem("tokenStore", res.data.token);
       setIsLogin(true);
-      navigate('/')
+      navigate('/create')
     } catch (err) {
       err.response.data.msg && setErr(err.response.data.msg);
     }
   };
   return (
     <Flex
+    minW={"800px"}
       minH={"100vh"}
       align={"center"}
       justify={"center"}
@@ -108,7 +109,7 @@ export default function Login({ setIsLogin, isLogin }) {
                   bg: "blue.500",
                 }}
               >
-                Sign in
+                Login
               </Button>
             </Stack>
             <Stack pt={6}>

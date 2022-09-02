@@ -5,7 +5,7 @@
   }
   
   #menu-bar {
-    width: 45px;
+    width: 30px;
     height: 40px;
     margin: 30px 0 20px 20px;
     cursor: pointer;
@@ -39,12 +39,12 @@
   
   .nav li {
     list-style: none;
-    padding: 12px 0;
+    padding: 6px 0;
   }
   
   .nav li a {
     color: white;
-    font-size: 23px;
+    font-size: 20px;
     text-decoration: none;
   }
   
@@ -89,7 +89,7 @@
   }
   
   .change-bg {
-    width: 720px;
-    height: 660px;
+    width: 540px;
+    height: 550px;
     transform: translate(-60%,-30%);
   }

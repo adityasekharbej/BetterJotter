@@ -36,10 +36,10 @@
     background-position: 200% center;
   }
 }
-ul{
+.ul{
     display: flex;
   }
-  ul li{
+  .ul li{
     position: relative;
     display: block;
     color: #666;
@@ -53,7 +53,7 @@ ul{
     cursor: pointer;
     transition: .5s;
   }
-  ul li:before{
+  .ul li:before{
     position: absolute;
     content: '';
     top: 0;
@@ -66,77 +66,78 @@ ul{
     z-index: -1;
     transition: .5s;
   }
-  ul li:nth-child(1):before{
+  .ul li:nth-child(1):before{
     background: #4267B2;
   }
-  ul li:nth-child(2):before{
+  .ul li:nth-child(2):before{
     background: #1DA1F2;
   }
-  ul li:nth-child(3):before{
+  .ul li:nth-child(3):before{
     background: white;
   }
-  ul li:nth-child(4):before{
+  .ul li:nth-child(4):before{
     background: #E1306C;
   }
-  ul li:nth-child(5):before{
+  .ul li:nth-child(5):before{
     background: #ff0000;
   }
-  ul li:hover:before{
+  .ul li:hover:before{
     filter: blur(3px);
     transform: scale(1.2);
     /* box-shadow: 0 0 15px #d35400; */
   }
-  ul li:nth-child(1):hover:before{
+  .ul li:nth-child(1):hover:before{
     box-shadow: 0 0 15px #4267B2;
   }
-  ul li:nth-child(2):hover:before{
+  .ul li:nth-child(2):hover:before{
     box-shadow: 0 0 15px #1DA1F2;
   }
-  ul li:nth-child(3):hover:before{
+  .ul li:nth-child(3):hover:before{
     box-shadow: 0 0 15px #c1c8cf;
   }
-  ul li:nth-child(4):hover:before{
+  .ul li:nth-child(4):hover:before{
     box-shadow: 0 0 15px #E1306C;
   }
   
-  ul li:nth-child(1):hover{
+  .ul li:nth-child(1):hover{
     color: #1d63f0;
     box-shadow: 0 0 15px #2066f2;
     text-shadow: 0 0 15px #396ed6;
   }
-  ul li:nth-child(2):hover{
+  .ul li:nth-child(2):hover{
     color: #269df2;
     box-shadow: 0 0 15px #1DA1F2;
     text-shadow: 0 0 15px #1DA1F2;
   }
-  ul li:nth-child(3):hover{
+  .ul li:nth-child(3):hover{
     color: #cdc0c4;
     box-shadow: 0 0 15px #e6e0e2;
     text-shadow: 0 0 15px #a68c96;
   }
-  ul li:nth-child(4):hover{
+  .ul li:nth-child(4):hover{
     color: #e23670;
     box-shadow: 0 0 15px #E1306C;
     text-shadow: 0 0 15px #E1306C;
   }
-   ul li:hover{
+   .ul li:hover{
     color: #ffa502;
     box-shadow: 0 0 15px #d35400;
     text-shadow: 0 0 15px #d35400;
   } 
-  body{
+  .body{
     display: flex;
     height: 80vh;
     text-align: center;
     align-items: center;
     justify-content: center;
-    background: #262626;
+    background: #a1a0a0;
   }
     
 .btn-shine{
 position: absolute;
-top:50%;
-left:20%;
+/* top:50%;
+left:20%; */
+bottom: 0;
 transform: translate(-50%,-50%);
 
 color: #ffffff;
