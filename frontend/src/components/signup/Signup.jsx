@@ -34,7 +34,7 @@ export default function Signup() {
   const registerSubmit = async () => {
     try {
       const res = await axios.post(
-        "http://localhost:8080/users/register",
+        "https://lit-basin-77633.herokuapp.com/users/register",
         {
           username: user.name,
           email: user.email,

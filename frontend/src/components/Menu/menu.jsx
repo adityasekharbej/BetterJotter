@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./menu.css";
 import styled from "styled-components";
 
-export const Menu = () => {
+export const Menu = ({ setIsLogin, isLogin }) => {
   function menuOnClick() {
     document.getElementById("menu-bar").classList.toggle("change");
     document.getElementById("nav").classList.toggle("change");
@@ -26,8 +26,18 @@ export const Menu = () => {
               </Link>
             </li>
             <li>
+              <Link to="/tasks" onClick={() => menuOnClick()}>
+                Tasks
+              </Link>
+            </li>
+            {/* <li>
               <Link to="/signup" onClick={() => menuOnClick()}>
                 Signup
+              </Link>
+            </li> */}
+             <li>
+              <Link to="/passwordmanager" onClick={() => menuOnClick()}>
+                Password Generator
               </Link>
             </li>
             <li>
@@ -40,22 +50,16 @@ export const Menu = () => {
                 Text Editor
               </Link>
             </li> */}
-            
+
             {/* <li>
               <Link to="#" onClick={() => menuOnClick()}>
                 Task Manager
               </Link>
             </li> */}
 
-            <li>
-              <Link to="/passwordmanager" onClick={() => menuOnClick()}>
-                Password Generator
-              </Link>
-            </li>
+           
 
-            <li>
-              <Link to="/tasks" onClick={() => menuOnClick()}>Tasks</Link>
-            </li>
+            
             <li>
               <Link to="#"></Link>
             </li>
