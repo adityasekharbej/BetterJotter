@@ -3,6 +3,7 @@ import { Box,Flex } from "@chakra-ui/react";
 import { DeleteIcon,EditIcon } from "@chakra-ui/icons";
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // let data = [
 //   {
@@ -35,11 +36,15 @@ const Task = () => {
   const [data, setData] = useState([])
   const [token, setToken] = useState("");
 
+  const navigate = useNavigate()
+
   useEffect(() => {
     const token = localStorage.getItem("tokenStore");
     setToken(token);
     if (token) {
       getNotes(token);
+    }else{
+      navigate('/login')
     }
   }, []);
 

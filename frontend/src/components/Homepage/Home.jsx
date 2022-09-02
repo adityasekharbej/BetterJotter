@@ -22,8 +22,9 @@ const Home = ({ setIsLogin, isLogin }) => {
   const toast = useToast();
 
   useEffect(() => {
+    const token = localStorage.getItem("tokenStore");
     console.log("hiii",isLogin)
-    if(!isLogin){
+    if(!token){
       navigate('/login')
     }
   }, [])
