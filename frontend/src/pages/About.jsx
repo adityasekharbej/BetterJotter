@@ -23,6 +23,13 @@ import {
 } from "@chakra-ui/react";
 import { Link as Link } from "react-router-dom";
 import "../components/about/C.css";
+import { Icon } from '@chakra-ui/react'
+import { FaFacebookF } from 'react-icons/fa'
+import { BsInstagram } from 'react-icons/bs'
+import { BsGithub } from 'react-icons/bs'
+import { GrLinkedinOption } from 'react-icons/gr'
+
+
 const names = [
   { id: "1", name: "Aditya" },
   { id: "2", name: "Santanu" },
@@ -65,7 +72,7 @@ const About = () => {
                         target="open"
                         href="https://www.facebook.com/aditya.sekhar.bej/"
                       >
-                        <i class="fa-brands fa-facebook"></i>
+                        <Icon as={FaFacebookF} />
                       </a>
                     </li>
 
@@ -74,7 +81,7 @@ const About = () => {
                         target="open"
                         href="https://www.linkedin.com/in/aditya-sekhar-bej/"
                       >
-                        <i class="fab fa-linkedin-in"></i>
+                        <Icon as ={GrLinkedinOption}/>
                       </a>
                     </li>
                     <li>
@@ -82,7 +89,7 @@ const About = () => {
                         target="open"
                         href="https://github.com/adityasekharbej"
                       >
-                        <i class="fab fa-github"></i>
+                        <Icon as={BsGithub} />
                       </a>
                     </li>
                     <li>
@@ -90,7 +97,7 @@ const About = () => {
                         target="open"
                         href="https://www.instagram.com/i.maverick.exe/"
                       >
-                        <i class="fab fa-instagram"></i>
+                        <Icon as={BsInstagram} />
                       </a>
                     </li>
                   </ul>
@@ -129,7 +136,7 @@ const About = () => {
                         target="open"
                         href="https://www.facebook.com/7008467376.shaaN/"
                       >
-                        <i class="fab fa-facebook-f"></i>
+                        <Icon as={FaFacebookF} />
                       </a>
                     </li>
 
@@ -138,12 +145,12 @@ const About = () => {
                         target="open"
                         href="https://www.linkedin.com/in/santanu-mohapatra-880204200/"
                       >
-                        <i class="fab fa-linkedin-in"></i>
+                        <Icon as ={GrLinkedinOption}/>
                       </a>
                     </li>
                     <li>
                       <a target="open" href="https://github.com/santanu55555">
-                        <i class="fab fa-github"></i>
+                        <Icon as={BsGithub} />
                       </a>
                     </li>
                     <li>
@@ -151,7 +158,7 @@ const About = () => {
                         target="open"
                         href="https://www.instagram.com/shantanu_469/"
                       >
-                        <i class="fab fa-instagram"></i>
+                        <Icon as={BsInstagram} />
                       </a>
                     </li>
                   </ul>
@@ -189,7 +196,7 @@ const About = () => {
                         href="https://www.facebook.com/susmita.mandal.50746"
                         target="open"
                       >
-                        <i class="fab fa-facebook-f"></i>
+                        <Icon as={FaFacebookF} />
                       </a>
                     </li>
                     <li>
@@ -197,12 +204,12 @@ const About = () => {
                         target="open"
                         href="https://www.linkedin.com/in/susmitamandal549/"
                       >
-                        <i class="fab fa-linkedin-in"></i>
+                        <Icon as ={GrLinkedinOption}/>
                       </a>
                     </li>
                     <li>
                       <a target="open" href="https://github.com/Susmita549">
-                        <i class="fab fa-github"></i>
+                        <Icon as={BsGithub} />
                       </a>
                     </li>
                   </ul>

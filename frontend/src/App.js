@@ -31,14 +31,7 @@ function App() {
   }, []);
   return (
     <div>
-
-      {/* <MainRoutes /> */}
-      {/* <Task/> */}
-      {/* <C/> */}
-      {/* <Home/> */}
-
       <MainRoutes setIsLogin={setIsLogin} isLogin= {isLogin}/>
-
     </div>
   );
 }
