@@ -1,10 +1,10 @@
 {
-  "name": "SAS",
+  "name": "Better Jotter",
   "description": "open your best companion with one click",
   "version": "1.0.0",
   "manifest_version": 3,
   "action": {
-    "default_title": "SAS",
+    "default_title": "Better Jotter",
     "default_popup": "index.html",
     "default_icon": {
       "16": "logo192.png",
